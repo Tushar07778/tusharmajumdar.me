@@ -1,0 +1,216 @@
+/* ===== ABOUT ===== */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header .section-tag {
+    justify-content: center;
+}
+
+.section-header .section-tag::before {
+    display: none;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 70px;
+    align-items: start;
+}
+
+/* Photo Column */
+.about-photo-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.about-photo-frame {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+}
+
+.about-photo {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: grayscale(15%) contrast(1.05);
+}
+
+.photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 10, 15, 0.7) 0%, transparent 60%);
+}
+
+.photo-badge {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    background: rgba(10, 10, 15, 0.85);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.badge-emoji {
+    font-size: 1.5rem;
+}
+
+.badge-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.badge-sub {
+    font-size: 0.72rem;
+    color: var(--accent-cyan);
+}
+
+/* Highlight Cards */
+.about-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.highlight-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+}
+
+.highlight-icon {
+    font-size: 1.1rem;
+    color: var(--accent-cyan);
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--accent-glow-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.highlight-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.highlight-sub {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+/* Text Column */
+.about-text-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--text-primary);
+}
+
+.about-bio {
+    font-size: 0.97rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.skills-heading {
+    margin-top: 8px;
+    margin-bottom: -8px;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.skill-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.skill-badge:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--skill-color, var(--accent-cyan));
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+.skill-icon {
+    font-size: 1.6rem;
+    color: var(--skill-color, var(--accent-cyan));
+    display: flex;
+    align-items: center;
+}
+
+.skill-name {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-photo-frame {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .about-photo {
+        height: 280px;
+    }
+}

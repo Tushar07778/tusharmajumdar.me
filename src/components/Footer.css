@@ -1,0 +1,129 @@
+/* ===== FOOTER ===== */
+.footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 24px;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.footer-logo .logo-bracket {
+    color: var(--accent-cyan);
+    font-weight: 300;
+}
+
+.footer-logo .logo-name {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 4px;
+}
+
+.footer-nav-link {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 7px 14px;
+    border-radius: 8px;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.footer-nav-link:hover {
+    color: var(--accent-cyan);
+    background: var(--accent-glow-cyan);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 8px;
+}
+
+.footer-social {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-social:hover {
+    color: var(--accent-cyan);
+    border-color: rgba(0, 212, 255, 0.4);
+    background: var(--accent-glow-cyan);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border);
+    padding: 16px 0;
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.heart-icon {
+    color: #ff4d6d;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 16px;
+    }
+
+    .footer-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

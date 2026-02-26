@@ -1,0 +1,183 @@
+/* ===== PROJECTS ===== */
+.projects-section {
+    background: linear-gradient(180deg, transparent 0%, rgba(168, 85, 247, 0.03) 50%, transparent 100%);
+}
+
+.section-subtitle {
+    font-size: 0.97rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 48px;
+}
+
+/* Card */
+.project-card-new {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+}
+
+.project-card-new:hover {
+    border-color: var(--card-color, var(--accent-cyan));
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 212, 255, 0.08);
+}
+
+/* Image */
+.card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    filter: brightness(0.85) saturate(1.1);
+}
+
+.project-card-new:hover .card-img {
+    transform: scale(1.06);
+    filter: brightness(0.7) saturate(1.2);
+}
+
+.card-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 10, 15, 0.9) 0%, transparent 60%);
+}
+
+/* Action Buttons (appear on hover) */
+.card-actions {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card-new:hover .card-actions {
+    opacity: 1;
+}
+
+.card-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(10, 10, 15, 0.85);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: var(--transition);
+    backdrop-filter: blur(8px);
+}
+
+.card-action-btn:hover {
+    background: var(--card-color);
+    color: #000;
+    border-color: transparent;
+    transform: scale(1.1);
+}
+
+/* Body */
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.card-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    transition: color 0.3s;
+}
+
+.project-card-new:hover .card-title {
+    color: var(--card-color);
+}
+
+.card-desc {
+    font-size: 0.83rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    flex: 1;
+}
+
+/* Tech Tags */
+.card-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.tech-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: rgba(0, 212, 255, 0.08);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    color: var(--accent-cyan);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Glow line at bottom */
+.card-glow-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--card-color, var(--accent-cyan)), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.project-card-new:hover .card-glow-line {
+    opacity: 1;
+}
+
+/* CTA */
+.projects-cta {
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-img-wrapper {
+        height: 180px;
+    }
+}
